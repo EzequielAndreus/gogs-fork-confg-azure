@@ -1,0 +1,14 @@
+- name: Deploy Gogs with Docker Compose
+  hosts: gogs_server
+  become: true
+
+  roles:
+    - common
+    - docker
+    - gogs
+
+- name: Install Splunk Forwarder
+  hosts: splunk_forwarders
+  become: true
+  roles:
+    - splunk_forwarder
